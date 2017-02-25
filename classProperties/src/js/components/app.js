@@ -22,7 +22,7 @@ export default class App extends React.Component {
     }
 }
 
-App.defaulProps = {
+App.defaultProps = {
     name: 'Admin'
 }
 
