@@ -1,0 +1,31 @@
+body {
+    margin-top: 10px;
+}
+
+.pos-center {
+    text-align: center;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+.container-color {
+    background-color: #f8f8f8;
+}
+
+.comp-container {
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.comp-content {
+    height: 150px;
+    background-color: azure;
+    position: relative;
+}
+
+.imp-content {
+    position: absolute;
+    bottom: 10px;
+}
