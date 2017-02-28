@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../store.js';
+//import { addEmployee } from '../actionCreators.js';
 
 export default class EmployeeForm extends React.Component {
     constructor(props) {
@@ -65,6 +66,7 @@ export default class EmployeeForm extends React.Component {
             type: 'ADD_EMPLOYEE',
             item: this.state
         });
+        // store.dispatch(addEmployee(this.state));
         this.setState(this.getInitialState());
         this.nameEle.focus();
     }
