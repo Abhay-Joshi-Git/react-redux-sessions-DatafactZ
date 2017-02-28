@@ -1,0 +1,19 @@
+body {
+    margin-top: 10px;
+}
+
+.pos-center {
+    text-align: center;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+.container-color {
+    background-color: #f8f8f8;
+}
+
+.dashboard label {
+    margin-right: 10px;
+}
