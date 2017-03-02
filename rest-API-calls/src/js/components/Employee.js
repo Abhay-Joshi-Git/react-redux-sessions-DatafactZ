@@ -5,15 +5,23 @@ import { withRouter } from 'react-router';
 class Employee extends React.Component {
     render() {
         return <div>
-            <h3>Employee Info</h3>
+            {
+                this.props.employee ?
+                <div>
+                    <h3>Employee Info</h3>
 
-            <div className='well well-sm' style={{marginTop: 10}}>
-                id  - {this.props.employee.id}
-                <br/>
-                name - {this.props.employee.name}
-                <br />
-                department - {this.props.employee.department}
-            </div>
+                    <div className='well well-sm' style={{marginTop: 10}}>
+                        id  - {this.props.employee.id}
+                        <br/>
+                        name - {this.props.employee.name}
+                        <br />
+                        department - {this.props.employee.department}
+                    </div>
+
+                </div>
+                : 'no record present for this id'
+
+            }
         </div>
     }
 }

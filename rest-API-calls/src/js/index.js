@@ -4,14 +4,7 @@ import Router from './router.js';
 import { configureStore } from './store.js';
 import { Provider } from 'react-redux';
 
-const store = configureStore({
-    employees: [
-        {
-            id: 1,
-            name: 'John'
-        }
-    ]
-});
+const store = configureStore();
 
 ReactDom.render(
     <Provider store={store}>

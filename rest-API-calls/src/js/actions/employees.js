@@ -1,11 +1,19 @@
 import * as API from '../APIs/employees.js';
 
 export const loadEmployees = () => (dispatch) => {
+    dispatch({
+        type: 'HTTP_REQUEST_START'
+    });
     API.loadEmployees().then(data => {
-        dispatch({
-            type: 'LOAD_EMPLOYEE_SUCCESS',
-            payload: data
-        });
+        setTimeout(() => {
+            dispatch({
+                type: 'LOAD_EMPLOYEE_SUCCESS',
+                payload: data
+            });
+            dispatch({
+                type: 'HTTP_REQUEST_END'
+            });            
+        }, 2000)
     });
 }
 

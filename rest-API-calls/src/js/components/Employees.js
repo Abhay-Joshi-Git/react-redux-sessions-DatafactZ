@@ -10,24 +10,33 @@ class EmployeeList extends React.Component {
 
     render() {
         return <div>
-            <div >
-                <h3 style={{display: 'inline-block'}}>Employees List</h3>
-                <NavLink to='employee/new'
-                    className='pull-right'
-                    style={{marginTop: 20, height: 20, width: 10}}
-                >
-                    <i
-                        className='glyphicon glyphicon-plus-sign'
-                        style={{color: 'blue'}}
-                        onClick={this.addEmployee}
-                    >
-                    </i>
-                </NavLink>
-            </div>
+            {
+                this.props.loading ? <div style={{cursor: 'progress'}}>
+                    loading records....
+                </div> :
+                <div>
+                    <div >
+                        <h3 style={{display: 'inline-block'}}>Employees List</h3>
+                        <NavLink to='employee/new'
+                            className='pull-right'
+                            style={{marginTop: 20, height: 20, width: 10}}
+                        >
+                            <i
+                                className='glyphicon glyphicon-plus-sign'
+                                style={{color: 'blue'}}
+                                onClick={this.addEmployee}
+                            >
+                            </i>
+                        </NavLink>
+                    </div>
 
-            <br/>
+                    <br/>
 
-            {this.getEmployeeList()}
+                    {this.getEmployeeList()}
+                </div>
+
+            }
+
         </div>
     }
 
@@ -47,7 +56,8 @@ class EmployeeList extends React.Component {
 }
 
 const mapStateToPrps = (state) => ({
-    employees: state.employees
+    employees: state.employees,
+    loading: state.httpRequestProgress
 });
 
 export default connect(
