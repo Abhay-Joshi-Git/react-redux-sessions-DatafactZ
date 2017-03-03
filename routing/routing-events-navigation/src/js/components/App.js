@@ -1,11 +1,11 @@
 import React from 'react';
 import NavLink from './NavLink.js';
 
-export default class AppContainer extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <div>
-                {this.getNavLinks()}
+                {this.getLinks()}
                 <br />
                 <br />
 
@@ -16,15 +16,12 @@ export default class AppContainer extends React.Component {
         )
     }
 
-    getNavLinks() {
+    getLinks() {
         return (
             <nav>
                 <NavLink to='/' onlyActiveOnIndex={true}>Home</NavLink>
-                <NavLink to='/departments'>Departments</NavLink>
                 <NavLink to='/employees'>Employees</NavLink>
             </nav>
         )
     }
 }
-
-//onlyActiveOnIndex={true}
