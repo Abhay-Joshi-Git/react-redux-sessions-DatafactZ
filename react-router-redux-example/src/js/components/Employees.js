@@ -13,7 +13,6 @@ class EmployeeList extends React.Component {
 
     render() {
         return <div>
-
             {
                 this.props.params.department ?
                 <h4>Selected Department - {this.props.params.department}</h4>
@@ -22,6 +21,13 @@ class EmployeeList extends React.Component {
                     && !this.props.params.department
                 ) ?
                 <div>
+
+                    {
+                        ! this.props.filterByDeptVisited ?
+                        <div className='alert alert-info'>
+                            you can select a department and filter employees for that department
+                        </div> : null
+                    }
                     <h4>Department List</h4>
                     <ul>
                         {
@@ -107,7 +113,6 @@ class EmployeeList extends React.Component {
 }
 
 const mapStateToPrps = (state, ownProps) => {
-    console.log(state);
     return {
         employees: ownProps.params.department ?
             state.employees.filter(item =>
@@ -118,7 +123,8 @@ const mapStateToPrps = (state, ownProps) => {
             state.employees ? uniq(state.employees.map(item =>
                 item.department)) :
                 null,
-        loading: state.httpRequestProgress
+        loading: state.httpRequestProgress,
+        filterByDeptVisited: state.filterByDeptVisited
     }
 };
 
