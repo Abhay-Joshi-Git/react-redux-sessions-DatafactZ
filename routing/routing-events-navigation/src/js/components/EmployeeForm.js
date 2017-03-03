@@ -10,10 +10,23 @@ class Employee extends React.Component {
         this.state = this.getInitialState();
     }
 
+    componentDidMount() {
+        console.log(this.props.router);
+        this.props.router.setRouteLeaveHook(this.props.route, this.routerWillLeave)
+    }
+
+    routerWillLeave = (nextLocation) => {
+        // return false to prevent a transition w/o prompting the user,
+        // or return a string to allow the user to decide:
+        if (!this.state.isSaved)
+          return 'Unsaved form!! Are you sure you want to leave?'
+    }
+
     getInitialState() {
         return {
             name: '',
             department: '',
+            isSaved: true,
             serverError: ''
         }
     }
@@ -64,13 +77,15 @@ class Employee extends React.Component {
 
     onNameChange = (e) => {
         this.setState({
-            name: e.target.value
+            name: e.target.value,
+            isSaved: false
         });
     }
 
     onDepartmentChange = (e) => {
         this.setState({
-            department: e.target.value
+            department: e.target.value,
+            isSaved: false
         });
     }
 
