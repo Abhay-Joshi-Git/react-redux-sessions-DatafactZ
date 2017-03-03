@@ -3,6 +3,8 @@ import NavLink from './NavLink.js';
 import { connect } from 'react-redux';
 import { loadEmployees } from '../actions/employees.js';
 import uniq from 'lodash/uniq';
+import { withRouter } from 'react-router';
+import { push } from 'react-router-redux';
 
 class EmployeeList extends React.Component {
     loadEmployees = () => {
@@ -13,7 +15,12 @@ class EmployeeList extends React.Component {
         return <div>
 
             {
-                (this.props.departments && this.props.departments.length) ?
+                this.props.params.department ?
+                <h4>Selected Department - {this.props.params.department}</h4>
+                : ((this.props.departments &&
+                    this.props.departments.length
+                    && !this.props.params.department
+                ) ?
                 <div>
                     <h4>Department List</h4>
                     <ul>
@@ -22,12 +29,19 @@ class EmployeeList extends React.Component {
                                 <li
                                     key={item}
                                 >
-                                    {item}
+                                    <a
+                                        onClick={() => {
+                                            console.log(this.props.router.location.pathname + '/' + item)
+                                            this.props.push(this.props.router.location.pathname + '/' + item)
+                                        }}
+                                    >
+                                        {item}
+                                    </a>
                                 </li>
                             ))
                         }
                     </ul>
-                </div> : null
+                </div> : null)
             }
 
 
@@ -92,16 +106,23 @@ class EmployeeList extends React.Component {
     }
 }
 
-const mapStateToPrps = (state) => {
+const mapStateToPrps = (state, ownProps) => {
     console.log(state);
     return {
-        employees: state.employees,
-        departments: state.employees ? uniq(state.employees.map(item => item.department)): null,
+        employees: ownProps.params.department ?
+            state.employees.filter(item =>
+                item.department == ownProps.params.department) :
+                state.employees,
+        departments: ownProps.params.department ?
+            [ownProps.params.department] :
+            state.employees ? uniq(state.employees.map(item =>
+                item.department)) :
+                null,
         loading: state.httpRequestProgress
     }
 };
 
-export default connect(
+export default withRouter(connect(
     mapStateToPrps,
-    { loadEmployees }
-)(EmployeeList);
+    { loadEmployees, push }
+)(EmployeeList));

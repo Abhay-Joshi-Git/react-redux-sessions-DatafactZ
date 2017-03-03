@@ -10,7 +10,7 @@ export default (props) => (
     <Router history={ props.history }>
         <Route path='/' component={App}>
             <IndexRoute component={Home}></IndexRoute>
-            <Route path='employees' component={EmployeeList}></Route>
+            <Route path='employees(/:department)' component={EmployeeList}></Route>
             <Route path='employee/new' component={EmployeeForm}></Route>
             <Route path='employee/:id' component={Employee}></Route>
             <Route path='/:id' component={() => (
