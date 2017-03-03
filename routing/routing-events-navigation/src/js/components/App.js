@@ -1,7 +1,13 @@
 import React from 'react';
 import NavLink from './NavLink.js';
+import { connect } from 'react-redux';
+import { loadEmployees } from '../actions/employees.js';
 
-export default class App extends React.Component {
+class App extends React.Component {
+    componentDidMount() {
+        this.props.loadEmployees();
+    }
+
     render() {
         return (
             <div>
@@ -25,3 +31,8 @@ export default class App extends React.Component {
         )
     }
 }
+
+export default connect(
+    null,
+    { loadEmployees }
+)(App);
