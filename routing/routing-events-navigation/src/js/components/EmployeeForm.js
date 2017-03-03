@@ -90,8 +90,13 @@ class Employee extends React.Component {
     }
 
     saveRecord = () => {
-        this.props.add(this.state).then(() => {
-            this.props.router.push('/employees');
+        var {name, department} = this.state;
+        this.props.add({name, department}).then(() => {
+            this.setState({
+                isSaved: true
+            }, () => {
+                this.props.router.push('/employees');
+            });
             // this.setState(this.getInitialState());
             // this.nameEle.focus();
         }).catch((error) => {
