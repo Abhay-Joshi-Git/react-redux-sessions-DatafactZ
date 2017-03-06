@@ -1,0 +1,35 @@
+body {
+    margin-top: 10px;
+}
+
+.pos-center {
+    text-align: center;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+.container-color {
+    background-color: #f8f8f8;
+}
+
+.icon, a  {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#app {
+    height: 600px;
+    overflow-y: auto;
+}
+
+.activeLink {
+    color :green;
+}
+
+.form-control {
+    display: inline-block !important;
+    width: 300px !important;
+    margin-left: 20px;
+}
