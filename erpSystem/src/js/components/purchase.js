@@ -28,39 +28,42 @@ class PurchaseFloor extends React.Component {
         return (
             <div>
                 <div>
-                    <h3>Available Amount : {this.props.availableAmount}</h3>
+                    <h4>Available Amount : {this.props.availableAmount}</h4>
                 </div>
 
 
-                <form onSubmit={this.purchase}>
-                    <label>Steel : </label>
-                    <input
-                        placeholder='Quantity'
-                        className='form-control'
-                        value={this.state.purchase.steel}
-                        onChange={(event) => this.purchaseChange('steel', event.target.value)}
-                        ref={node => this.steelEle = node}
-                    />
-                    <br/>
-                    <br/>
-                    <label>Glass Sheets : </label>
-                    <input
-                        placeholder='Quantity'
-                        className='form-control'
-                        value={this.state.purchase.glass}
-                        onChange={(event) => this.purchaseChange('glass', event.target.value)}
-                        ref={node => this.glassEle = node}
-                    />
-                    <br/>
-                    <br/>
-                    <button
-                        type='submit'
-                        className='btn btn-primary'
-                        disabled={!this.state.canPurchase}
-                    >
-                    Purchase
-                    </button>
-                </form>
+                <div className='well'>
+                    <h3>Purchase Desk</h3>
+                        <form onSubmit={this.purchase}>
+                            <label>Steel : </label>
+                            <input
+                                placeholder='Quantity'
+                                className='form-control'
+                                value={this.state.purchase.steel}
+                                onChange={(event) => this.purchaseChange('steel', event.target.value)}
+                                ref={node => this.steelEle = node}
+                            />
+                            <br/>
+                            <br/>
+                            <label>Glass Sheets : </label>
+                            <input
+                                placeholder='Quantity'
+                                className='form-control'
+                                value={this.state.purchase.glass}
+                                onChange={(event) => this.purchaseChange('glass', event.target.value)}
+                                ref={node => this.glassEle = node}
+                            />
+                            <br/>
+                            <br/>
+                            <button
+                                type='submit'
+                                className='btn btn-primary'
+                                disabled={!this.state.canPurchase}
+                            >
+                            Purchase
+                            </button>
+                        </form>                
+                </div>
             </div>
         )
     }

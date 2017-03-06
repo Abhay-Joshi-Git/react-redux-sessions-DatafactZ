@@ -1,10 +1,11 @@
 const initialState = {
-    availableAmount : 500
+    availableAmount : 5000
 }
 
 const finance = (state = initialState, action) => {
     switch (action.type) {
         case 'PURCHASE_SUCCESS':
+        case 'PRODUCTION_SUCCESS':
             return {
                 ...state,
                 availableAmount: state.availableAmount - action.amount
@@ -14,11 +15,6 @@ const finance = (state = initialState, action) => {
                 ...state,
                 availableAmount: state.availableAmount + action.amount
             }
-        case 'PRODUCTION_START':
-        return {
-            ...state,
-            availableAmount: state.availableAmount - action.amount
-        }
         default:
             return state;
     }

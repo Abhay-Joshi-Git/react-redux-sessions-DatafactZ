@@ -21,6 +21,8 @@ class App extends React.Component {
             <nav>
                 <NavLink to='/' onlyActiveOnIndex={true}>Home</NavLink>
                 <NavLink to='/purchase' onlyActiveOnIndex={true}>Purchase</NavLink>
+                <NavLink to='/produce' onlyActiveOnIndex={true}>Produce</NavLink>
+                <NavLink to='/sales' onlyActiveOnIndex={true}>Sales</NavLink>
             </nav>
         )
     }
