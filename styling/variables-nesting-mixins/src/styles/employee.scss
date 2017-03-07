@@ -1,0 +1,8 @@
+.employee {
+
+    .list-item {
+        font-family: monospace;
+        color: $list-item-color;
+        @include border-radius(10px);
+    }
+}
