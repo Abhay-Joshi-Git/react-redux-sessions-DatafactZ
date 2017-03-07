@@ -1,0 +1,11 @@
+body {
+    margin-top: 10px;
+}
+
+:global .pos-center {
+    text-align: center;
+}
+
+:global .container-color {
+    background-color: blue;
+}
