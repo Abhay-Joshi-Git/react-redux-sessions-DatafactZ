@@ -2,7 +2,6 @@
 
     padding-left: $padding-left-container;
 
-
     /*
         Example of using a mixin
         here we are using mixin border-radius, passing 10px as argument value
@@ -11,6 +10,7 @@
     .list-item {
         font-family: monospace;
         color: $list-item-color;
-        @include border-radius(10px);
+        @include border-radius('md');
     }
+
 }

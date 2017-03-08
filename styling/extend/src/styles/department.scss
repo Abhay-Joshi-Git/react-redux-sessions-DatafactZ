@@ -1,9 +1,11 @@
 .department {
 
     padding-left: $padding-left-container;
-    
+
     .list-item {
-        color: $list-item-color
+        @extend .list-item-common;
+        //font-size: 20px;
+        //font-family: cursive;
     }
 
     h4 {

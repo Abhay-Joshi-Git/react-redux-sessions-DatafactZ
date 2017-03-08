@@ -1,0 +1,21 @@
+body {
+    margin-top: 10px;
+}
+
+.pos-center {
+    text-align: center;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+.container-color {
+    background-color: #f8f8f8;
+}
+
+.list-item-common {
+    font-family: monospace;
+    color: $list-item-color;
+    //@include border-radius(10px);
+}

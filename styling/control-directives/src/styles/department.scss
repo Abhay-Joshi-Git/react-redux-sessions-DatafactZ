@@ -1,9 +1,10 @@
 .department {
 
     padding-left: $padding-left-container;
-    
+
     .list-item {
-        color: $list-item-color
+        color: $list-item-color;
+        @include border-radius('sm');
     }
 
     h4 {

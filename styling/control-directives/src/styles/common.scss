@@ -32,3 +32,12 @@ body {
         weight: bold;
     }
 }
+
+
+//for..
+$list-rows: 10;
+@for $i from 1 through $list-rows {
+  .row-#{$i} {
+      margin-top: $i * 10px;
+  }
+}

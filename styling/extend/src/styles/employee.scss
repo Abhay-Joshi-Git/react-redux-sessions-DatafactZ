@@ -1,0 +1,8 @@
+.employee {
+
+    padding-left: $padding-left-container;
+
+    .list-item {
+        @extend .list-item-common;
+    }
+}

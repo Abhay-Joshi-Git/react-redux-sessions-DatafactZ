@@ -1,0 +1,24 @@
+@mixin border-radius-browsers($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//if function
+@mixin border-radius($sizeStop) {
+    @include border-radius-browsers(if($sizeStop == 'sm', 5px, 10px))
+}
+
+//@if @else
+// @mixin border-radius($sizeStop) {
+//     $borderSize: 10px;
+//     @if $sizeStop == 'xs' {
+//         $borderSize: 2px;
+//     } @else if $sizeStop == 'sm'{
+//         $borderSize: 5px;
+//     } @else if $sizeStop == 'lg' {
+//         $borderSize: 20px;
+//     }
+//     @include border-radius-browsers($borderSize)
+// }
