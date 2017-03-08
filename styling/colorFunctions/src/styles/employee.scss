@@ -1,0 +1,18 @@
+.employee {
+
+    padding-left: $padding-left-container;
+
+    /*
+        Example of using a mixin
+        here we are using mixin border-radius, passing 10px as argument value
+        resulting css will be included at that place
+    */
+    .list-item {
+        font-family: monospace;
+        color: $list-item-color;
+        @include border-radius('md');
+        @include light-color();
+    }
+
+
+}

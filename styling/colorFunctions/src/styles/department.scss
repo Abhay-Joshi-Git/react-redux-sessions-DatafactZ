@@ -1,0 +1,14 @@
+.department {
+
+    padding-left: $padding-left-container;
+
+    .list-item {
+        color: $list-item-color;
+        @include border-radius('sm');
+        @include dark-color();
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+}

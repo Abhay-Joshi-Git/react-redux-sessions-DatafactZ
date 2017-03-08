@@ -41,3 +41,28 @@ $list-rows: 10;
       margin-top: $i * 10px;
   }
 }
+
+
+//while
+// $counter: 1;
+// @while $counter <= $list-rows {
+//     .row1-#{$counter} {
+//         margin-top: $counter * 10px;
+//     }
+//     $counter: $counter + 1
+// }
+
+//operators -
+
+h2 {
+     width: 3px * 5 + 5px; // 20px
+     max-width: 3 * (5px + 5px); // 30px
+     min-width: 3px + (6px / 2) * 3; // 12px
+ }
+
+
+/*
+h2 {
+    width: 5px * 6px; // invalid
+}
+*/

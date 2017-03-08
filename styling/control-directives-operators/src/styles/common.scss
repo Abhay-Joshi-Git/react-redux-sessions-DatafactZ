@@ -1,0 +1,68 @@
+body {
+    margin-top: 10px;
+}
+
+.pos-center {
+    text-align: center;
+}
+
+.container {
+    margin: 10px 10px;
+}
+
+.container-color {
+    background-color: #f8f8f8;
+}
+
+
+/*
+    example of nesting properties,
+    below code will compile into :
+
+    .my {
+        font-family: serif;
+        font-size: 20px;
+        font-weight: bold
+    }
+*/
+.my {
+    font: {
+        family: serif;
+        size: 20px;
+        weight: bold;
+    }
+}
+
+
+//for..
+$list-rows: 10;
+@for $i from 1 through $list-rows {
+  .row-#{$i} {
+      margin-top: $i * 10px;
+  }
+}
+
+
+//while
+// $counter: 1;
+// @while $counter <= $list-rows {
+//     .row1-#{$counter} {
+//         margin-top: $counter * 10px;
+//     }
+//     $counter: $counter + 1
+// }
+
+//operators -
+
+h2 {
+     width: 3px * 5 + 5px; // 20px
+     max-width: 3 * (5px + 5px); // 30px
+     min-width: 3px + (6px / 2) * 3; // 12px
+ }
+
+
+/*
+h2 {
+    width: 5px * 6px; // invalid
+}
+*/
