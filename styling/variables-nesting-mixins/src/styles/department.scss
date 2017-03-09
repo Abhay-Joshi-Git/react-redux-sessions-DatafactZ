@@ -1,12 +1,18 @@
 .department {
 
     padding-left: $padding-left-container;
-    
+
     .list-item {
-        color: $list-item-color
+        color: $list-item-color;
+        @include border-radius(5px);
+    }
+    .list-item:hover {
+        color: red;
     }
 
     h4 {
         font-weight: bold;
     }
+
+
 }

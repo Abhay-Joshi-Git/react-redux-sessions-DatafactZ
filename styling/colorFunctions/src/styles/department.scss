@@ -10,5 +10,6 @@
 
     h4 {
         font-weight: bold;
+        @include base-color();
     }
 }

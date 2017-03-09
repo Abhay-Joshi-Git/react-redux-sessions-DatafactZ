@@ -6,21 +6,22 @@
         color: white;
     }
 
-    &:hover {
-        background-color: gray;
-    }
-
     .inside-container {
         background-color: white;
         color: black;
-
 
         .innermost-container {
             background-color: lime;
             padding-left: 20px;
         }
-
     }
 
+}
 
+.active {
+    background-color: blue;
+}
+
+.inactive {
+    background-color: gray;
 }

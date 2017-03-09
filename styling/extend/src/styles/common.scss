@@ -17,5 +17,5 @@ body {
 .list-item-common {
     font-family: monospace;
     color: $list-item-color;
-    //@include border-radius(10px);
+    @include border-radius(10px);
 }

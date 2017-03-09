@@ -5,7 +5,7 @@ $base-color: #00141E;
 }
 
 @mixin light-color() {
-    background-color:  lighten( $base-color, 10% )
+    background-color:  lighten( $base-color, 60% )
 }
 
 @mixin base-color() {
